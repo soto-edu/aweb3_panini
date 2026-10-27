@@ -10,7 +10,7 @@ $pdo = Database::getConnection();
 
 $app = AppFactory::create();
 
-$routes = require __DIR__ . '/../src/Routes/routes.php';
+$routes = require __DIR__ . '/../src/Routes/Routes.php';
 $routes($app);
 
 $app->run();
