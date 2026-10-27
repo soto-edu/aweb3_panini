@@ -17,8 +17,9 @@ class EquipesController extends RenderController
         ]);
     }   
     
-    public function getEquipeById(Request $request, Response $response, int $id): Response
+    public function getEquipeById(Request $request, Response $response, array $args): Response
     {
+        $id = $args['id'];
         $equipe = Equipes::findById($id);
         $page = 'equipe';
         return $this->render($response, $page, [
