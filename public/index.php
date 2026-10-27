@@ -1,9 +1,12 @@
 <?php
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
+
+use App\Services\Database;
 use Slim\Factory\AppFactory;
 
 require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../src/Config/env.php';
+
+$pdo = Database::getConnection();
 
 $app = AppFactory::create();
 
