@@ -1,10 +1,11 @@
 services:
   web:
-    build: Dockerfile
+    build: .
     ports:
-      - "8080:80"
+      - "80:80"
     volumes:
       - .:/var/www/html
+      - ./config/vhost/appPanini.conf:/etc/apache2/sites-enabled/000-default.conf
     depends_on:
       - db
 
