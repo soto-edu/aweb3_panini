@@ -1,5 +1,5 @@
 <?php
-/** @var App\Models\Equipes[] $equipes */
+/** @var App\Models\Equipe[] $equipes */
 ?>
 <h1>Équipes</h1>
 <ul>

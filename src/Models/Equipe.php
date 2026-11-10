@@ -8,26 +8,24 @@
 namespace App\Models;
 
 use App\Services\Database;
-use PDO;
 
-class Equipes
+class Equipe
 {
-    private PDO $pdoConnection;
-    private $id;
-    private $pays;
+    private int $id;
+    private string $pays;
 
-    public function __construct($id, $pays)
+    public function __construct(int $id, string $pays)
     {
         $this->id = $id;
         $this->pays = $pays;
     }
 
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function getPays()
+    public function getPays(): string
     {
         return $this->pays;
     }
@@ -40,7 +38,7 @@ class Equipes
 
         $equipes = [];
         foreach ($rows as $row) {
-            $equipes[] = new self($row['id'], $row['pays']);
+            $equipes[] = new self((int) $row['id'], $row['pays']);
         }
 
         return $equipes;
@@ -57,6 +55,6 @@ class Equipes
             return null;
         }
 
-        return new self($row['id'], $row['pays']);
+        return new self((int) $row['id'], $row['pays']);
     }
 }
