@@ -15,3 +15,9 @@ composer install
 ```bash
 cp ./config/env/.env.conf ./.env
 ```
+
+### Avec Docker
+```bash
+docker compose up -d --build
+docker compose exec web composer install
+```
