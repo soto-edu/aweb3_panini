@@ -30,6 +30,16 @@ class Equipe
         return $this->pays;
     }
 
+    /**
+     * Relation POO : une équipe possède des joueurs.
+     *
+     * @return Joueur[]
+     */
+    public function getJoueurs(): array
+    {
+        return Joueur::findByEquipe($this->id);
+    }
+
     public static function findAll(): array
     {
         $pdo = Database::getConnection();
