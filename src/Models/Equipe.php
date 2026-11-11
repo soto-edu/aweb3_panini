@@ -40,6 +40,16 @@ class Equipe
         return Joueur::findByEquipe($this->id);
     }
 
+    /**
+     * Relation POO : une équipe contient des vignettes.
+     *
+     * @return Vignette[]
+     */
+    public function getVignettes(): array
+    {
+        return Vignette::findByEquipe($this->id);
+    }
+
     public static function findAll(): array
     {
         $pdo = Database::getConnection();
